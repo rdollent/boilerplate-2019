@@ -26,6 +26,7 @@ const User = require('../models/User');
 // used in tandem with token to generate a 'hashed' token value
 const keys = require('../config/keys');
 
+// localstrategy is used by passport to authenticate and authorise user
 const myLocalStrategy = new LocalStrategy(
   // username and password are in req.body (default names are req.username and req.password)
   async (username, password, done) => {
