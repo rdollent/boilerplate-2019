@@ -1,6 +1,7 @@
 // need bcrypt to compare input password to hashed password from db
 const bcrypt = require('bcryptjs');
 
+// passport for authentication and authorization
 const passport = require('passport');
 
 // need passport JWT for JWT Strategy

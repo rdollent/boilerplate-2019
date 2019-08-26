@@ -10,6 +10,7 @@ import {Provider} from 'react-redux';
 // that way, you don't need to list every jsx component in alias in webpack.config.js
 import Main from 'Main';
 
+
 // const actions = require('actions');
 import {createStore} from './store/store';
 const store = createStore();

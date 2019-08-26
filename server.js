@@ -11,8 +11,8 @@ const expressValidator = require('express-validator');
 
 
 // Routes
-const userRoutes = require('./routes/user');
-const entryRoutes = require('./routes/entry');
+const userRoutes = require('./api/routes/user');
+const entryRoutes = require('./api/routes/entry');
 
 const app = express();
 
@@ -39,7 +39,7 @@ app.use(cors({ credentials: true, origin: true }));
 app.use(cookieParser());
 
 // Routes will begin with `/api/auth`
-app.use('/api/auth', userRoutes);
+app.use('/api/user', userRoutes);
 app.use('/api/entries', entryRoutes);
 
 

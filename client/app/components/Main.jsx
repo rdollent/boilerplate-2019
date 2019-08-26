@@ -1,28 +1,22 @@
-import React from 'react';
-import ApolloClient from 'apollo-boost';
-import { ApolloProvider } from 'react-apollo';
+import React, {Component} from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import Search from 'Search';
+// import Search from 'Search';
 // const Results = require('Results');
+import Register from './Register';
 
 
-// apollo client setup
-const client = new ApolloClient({
-    uri:  'http://localhost:3000/graphql' || 'https://boilerplate-graphql-rdollent.c9users.io/graphql'
-});
-
-class Main extends React.Component {
+class Main extends Component {
     constructor(props) {
         super(props);
     }
 
     render() {
         return (
-            <ApolloProvider client={client}>
+
                 <div id='main'>
-                    <Search/>
+                    <Register />
                 </div>
-            </ApolloProvider>
         );
     }
 }

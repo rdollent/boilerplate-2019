@@ -1,3 +1,4 @@
+// get promise from config file (pg-promise)
 const db = require('../db/config');
 
 const createUser = (email, username, password) => {
@@ -6,6 +7,8 @@ const createUser = (email, username, password) => {
 };
 
 exports.createUser = createUser;
+
+// postgresql queries and exported methods
 exports.findAll = () => db.query('SELECT * FROM users;');
 exports.findOne = username => db.oneOrNone('SELECT 1 FROM users where lower(username)=$1', [username.toLowerCase()]);
 exports.findById = id => db.oneOrNone('SELECT * FROM users WHERE id = $1', [id]);

@@ -92,7 +92,33 @@ npm run start:client
 ```
 
 
+
 ## Acknowledgements
 - Icons: [Font Awesome](https://fontawesome.com)
 
-// test
+
+###########################################################################################################
+
+## to login in psql on Windows
+- psql -U postgres
+- p/w: 1234
+
+## quit psql
+- \q to quit anytime
+
+## popular psql commands
+https://chartio.com/resources/tutorials/how-to-list-databases-and-tables-in-postgresql-using-psql/
+
+## to create database in psql
+- login
+- create database <databasename> **Do not include brackets**
+- \l to list all databases
+- \c <databasename> to connect to database
+
+## populating your database with seed.sql inside migrations folder in api\db directory
+- psql -U postgres -d <databasename> -f api/db/migrations/seed.sql;
+
+
+
+// back-end data flow
+//

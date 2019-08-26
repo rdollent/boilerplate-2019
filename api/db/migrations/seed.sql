@@ -33,19 +33,19 @@ CREATE TABLE IF NOT EXISTS users (
 --   balance INT
 -- );
 
--- CREATE TABLE IF NOT EXISTS entries (
---   id SERIAL PRIMARY KEY,
---   user_id BIGSERIAL, 
---   transact_id BOOLEAN,
---   category_id BIGSERIAL,
---   FOREIGN KEY ("user_id") REFERENCES "public"."users"("id") ON DELETE RESTRICT ON UPDATE RESTRICT,
---   FOREIGN KEY ("transact_id") REFERENCES "public"."transactions"("id") ON DELETE RESTRICT ON UPDATE RESTRICT,
---   FOREIGN KEY ("category_id") REFERENCES "public"."categories"("id") ON DELETE RESTRICT ON UPDATE RESTRICT,
---   entry_desc TEXT NOT NULL,
---   amount NUMERIC NOT NULL,
---   full_date DATE,
---   created_at TIMESTAMP without time zone DEFAULT now(),
---   recurring BOOLEAN
--- );
+CREATE TABLE IF NOT EXISTS entries (
+  id SERIAL PRIMARY KEY,
+  user_id BIGSERIAL, 
+  --transact_id BOOLEAN,
+  --category_id BIGSERIAL,
+  FOREIGN KEY ("user_id") REFERENCES "public"."users"("id") ON DELETE RESTRICT ON UPDATE RESTRICT,
+  --FOREIGN KEY ("transact_id") REFERENCES "public"."transactions"("id") ON DELETE RESTRICT ON UPDATE RESTRICT,
+  --FOREIGN KEY ("category_id") REFERENCES "public"."categories"("id") ON DELETE RESTRICT ON UPDATE RESTRICT,
+  entry_desc TEXT NOT NULL,
+  amount NUMERIC NOT NULL,
+  full_date DATE,
+  created_at TIMESTAMP without time zone DEFAULT now()
+  --recurring BOOLEAN
+);
 
--- CREATE INDEX idx_entries ON entries(user_id);
+CREATE INDEX idx_entries ON entries(user_id);

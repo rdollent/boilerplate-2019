@@ -13,6 +13,8 @@
 //     }
 // };
 
+import {STORE_CREDENTIALS} from '../actions/types';
+
 export const inputReducer = (state = {input: ''}, action) => {
     switch(action.type) {
         case 'ADD':
@@ -22,5 +24,18 @@ export const inputReducer = (state = {input: ''}, action) => {
             }
         default:
             return state;
+    }
+}
+
+export const credentialsReducer = (state = {username: '', email: '', password: ''}, action) => {
+    switch(action.type) {
+        case STORE_CREDENTIALS:
+            return {
+                username: action.username,
+                email: action.email,
+                password: action.password
+            }
+        default:
+                return state;
     }
 }

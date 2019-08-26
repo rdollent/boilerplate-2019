@@ -1,4 +1,4 @@
-import { SET_CURRENT_USER } from './types';
+import { SET_CURRENT_USER, STORE_CREDENTIALS } from './types';
 
 // userData = { username: string, expires: string }
 // setting user data in state.
@@ -22,3 +22,14 @@ export const logoutUser = () => (dispatch) => {
     payload: { username: '', expires: '' }
   });
 };
+
+///////////////////////////////////
+export const storeCredentials = (data) => {
+  return {
+    type: STORE_CREDENTIALS,
+    username: data.username,
+    email: data.email,
+    password: data.password
+  }
+
+}
