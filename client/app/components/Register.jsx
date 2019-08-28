@@ -28,7 +28,7 @@ class Register extends Component {
 
         this.props.submitCredentials(data);
         
-        console.log(this.props);
+        console.log(store.getState());
         let stateData = {username, password, email} = this.props;
 
 
