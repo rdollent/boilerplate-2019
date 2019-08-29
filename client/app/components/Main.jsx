@@ -15,7 +15,7 @@ class Main extends Component {
         return (
 
                 <div id='main'>
-                    <Register />
+                    <Register store={this.props.store}/>
                 </div>
         );
     }
